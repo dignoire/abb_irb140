@@ -1,0 +1,19 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find irb140)/robots/IRB140_-_M2000_REV2_01.URDF" />
+
+<node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />  
+
+<node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find irb140)/urdf.rviz" />
+
+</launch>

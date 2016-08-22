@@ -1,0 +1,6 @@
+<package>
+  <description brief="irb140">irb140</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

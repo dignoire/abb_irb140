@@ -1,0 +1,26 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+  <rosparam command="load" file="$(find irb140)/config/ros_control_controllers.yaml" />
+
+  <include file="$(find irb140)/launch/irb140_upload.launch"/>
+
+  <node name="spawn_robot" pkg="gazebo_ros"
+       type="spawn_model"
+       args="-param /robot_description -urdf  -model irb140 "
+       respawn="false" output="screen" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+  output="screen" args="joint_state_controller joint_trajectory_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen"/>
+
+</launch>
