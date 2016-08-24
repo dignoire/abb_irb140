@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       name="irb140" >
+
+  <xacro:include filename="$(find irb140)/robots/irb140.xacro" />
+
+  <xacro:include filename="$(find irb140)/robots/irb140.transmission.xacro"/>
+  <!-- table-->
+  <xacro:include filename="$(find irb140)/robots/table.urdf.xacro" />
+
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+
+  <link name="world"/>
+
+  <xacro:irb140 parent="world">
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 0" />
+  </xacro:irb140>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+   <xacro:irb140_transmission/>
+
+</robot>

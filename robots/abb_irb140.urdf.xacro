@@ -1,16 +1,41 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro"
-       name="irb140" >
+  name="irb140" >
+
+  <xacro:arg name="load_table" default="false"/>
 
   <xacro:include filename="$(find irb140)/robots/irb140.xacro" />
+
   <xacro:include filename="$(find irb140)/robots/irb140.transmission.xacro"/>
+
+  <xacro:include filename="$(find irb140)/robots/table.urdf.xacro" />
 
   <xacro:property name="M_PI" value="3.1415926535897931" />
 
   <link name="world"/>
 
-  <xacro:irb140 parent="world">
-    <origin xyz="0 0 0" rpy="-1.57079632679 0 0" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <xacro:if value="$(arg load_table)">
+      <child link="table_link"/>
+      <origin xyz="0 0 0.845"/>
+    </xacro:if>
+    <xacro:unless value="$(arg load_table)">
+      <child link="fixation_link"/>
+      <origin xyz="0 0 0.0"/>
+    </xacro:unless>
+  </joint>
+
+  <!-- table -->
+  <xacro:if value="$(arg load_table)">
+    <xacro:table/>
+  </xacro:if>
+
+  <link name="fixation_link"/>
+
+  <!-- LWR -->
+  <xacro:irb140 parent="fixation_link">
+    <origin xyz="0.0 0 0.0" rpy="${-M_PI/2} 0 0" />
   </xacro:irb140>
 
   <gazebo>
@@ -19,6 +44,6 @@
     </plugin>
   </gazebo>
 
-   <xacro:irb140_transmission/>
+  <xacro:irb140_transmission/>
 
 </robot>

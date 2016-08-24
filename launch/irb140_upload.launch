@@ -1,7 +1,8 @@
 <launch>
 
+  <arg name="load_table" default="false" />
 
-<param name="robot_description" command="
-        $(find xacro)/xacro '$(find irb140)/robots/abb_irb140.urdf.xacro' --inorder"/>
+  <param name="robot_description" command="
+    $(find xacro)/xacro '$(find irb140)/robots/abb_irb140.urdf.xacro' load_table:=$(arg load_table) --inorder"/>
 
-</launch>
+  </launch>

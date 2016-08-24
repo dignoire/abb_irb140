@@ -103,8 +103,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="${-M_PI}"
-      upper="${M_PI}"
+      lower="${-M_PI/4}"
+      upper="${M_PI/4}"
       effort="1000"
       velocity="200" />
     <!--calibration
@@ -172,8 +172,8 @@
     <axis
       xyz="0 1 0" />
     <limit
-      lower="${-M_PI}"
-      upper="${M_PI}"
+      lower="${-M_PI/4}"
+      upper="${M_PI/2}"
       effort="1000"
       velocity="200" />
     <!--calibration
@@ -241,8 +241,8 @@
     <axis
       xyz="0 1 0" />
     <limit
-      lower="${-M_PI}"
-      upper="${M_PI}"
+      lower="${-M_PI/4}"
+      upper="${M_PI/4}"
       effort="1000"
       velocity="200" />
     <!--calibration
@@ -379,8 +379,8 @@
     <axis
       xyz="0 1 2.6185E-05" />
     <limit
-      lower="${-M_PI}"
-      upper="${M_PI}"
+      lower="${-M_PI/2}"
+      upper="${M_PI/2}"
       effort="1000"
       velocity="200" />
     <!--calibration
