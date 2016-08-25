@@ -10,6 +10,8 @@
 
   <xacro:include filename="$(find irb140)/robots/table.urdf.xacro" />
 
+  <xacro:include filename="$(find irb140)/robots/walls.urdf.xacro" />
+
   <xacro:property name="M_PI" value="3.1415926535897931" />
 
   <link name="world"/>
@@ -29,6 +31,7 @@
   <!-- table -->
   <xacro:if value="$(arg load_table)">
     <xacro:table/>
+    <xacro:walls/>
   </xacro:if>
 
   <link name="fixation_link"/>
@@ -45,5 +48,7 @@
   </gazebo>
 
   <xacro:irb140_transmission/>
+
+
 
 </robot>
