@@ -9,48 +9,29 @@
      <child link="base_link" />
   </joint>
 
-  <link
-    name="base_link">
+  <link name="base_link">
     <inertial>
-      <origin
-        xyz="-0.082039 0.00040203 0.059925"
-        rpy="0 0 0" />
-      <mass
-        value="12.409" />
-      <inertia
-        ixx="0.1045"
-        ixy="1.0052E-05"
-        ixz="-0.0073428"
-        iyy="0.16728"
-        iyz="-0.00084301"
-        izz="0.24649" />
+      <origin xyz="-0.082039 0.00040203 0.059925" rpy="0 0 0" />
+      <mass value="12.409" />
+      <inertia ixx="0.1045" ixy="1.0052E-05" ixz="-0.0073428" iyy="0.16728" iyz="-0.00084301" izz="0.24649" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://irb140/meshes/base_link.STL" />
+        <mesh filename="package://irb140/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.8902 0.41176 0.12549 1" />
+      <material name="">
+        <color rgba="0.8902 0.41176 0.12549 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://irb140/meshes/base_link.STL" />
+        <mesh  filename="package://irb140/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="Link1">
+  <link name="Link1">
     <inertial>
       <origin
         xyz="0.029077 0.044209 0.1717"

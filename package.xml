@@ -1,0 +1,16 @@
+<package>
+
+  <name>irb140</name>
+  <version>0.2.0</version>
+  <description>irb140 package</description>
+  <maintainer email="seb.dignoire@gmail.com">dignoire</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>rtt_ros_kdl_tools</build_depend>
+
+  <run_depend>kdl_parser</run_depend>
+  <run_depend>rtt_ros_kdl_tools</run_depend>
+  
+</package>

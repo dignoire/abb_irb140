@@ -1,6 +1,7 @@
 <package>
   <description brief="irb140">irb140</description>
   <depend package="gazebo" />
+  <depend package="kdl_parser" />
   <author>Sebastien_Dignoire</author>
   <license>BSD</license>
 </package>

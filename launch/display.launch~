@@ -6,7 +6,7 @@
     default="false" />
   <param
     name="robot_description"
-    textfile="$(find IRB140_-_M2000_REV2_01)/robots/IRB140_-_M2000_REV2_01.URDF" />
+    textfile="$(find irb140)/robots/IRB140_-_M2000_REV2_01.URDF" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -24,13 +24,13 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find IRB140_-_M2000_REV2_01)/urdf.rviz" />
+    args="-d $(find irb140)/urdf.rviz" />
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" />
   <node
     name="spawn_model"
     pkg="gazebo"
     type="spawn_model"
-    args="-file $(find IRB140_-_M2000_REV2_01)/robots/IRB140_-_M2000_REV2_01.URDF-urdf -model IRB140_-_M2000_REV2_01"
+    args="-file $(find irb140)/robots/IRB140_-_M2000_REV2_01.URDF-urdf -model IRB140_-_M2000_REV2_01"
     output="screen" />
 </launch>
